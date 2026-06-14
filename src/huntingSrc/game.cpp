@@ -169,7 +169,7 @@ void Game::animalMovement() {
         // Animals can go offscreen
         if (currentAnimal -> getSection() < 0 || currentAnimal -> getSection() > 2) {
             // If the animal was a bear, the bear counter resets
-            if (currentAnimal -> getName() == "Bear") {
+            if (currentAnimal -> canHarmPlayer() == true) {
                 bearTurnsOnScreen = 0;
             }
 
@@ -183,7 +183,7 @@ void Game::animalMovement() {
 // Checks for the bear counter
 void Game::bearCheck() {
     // Checks if animal actually exists and if it is a bear
-    if (currentAnimal != nullptr && currentAnimal -> getName() == "Bear") {
+    if (currentAnimal != nullptr && currentAnimal -> canHarmPlayer() == true) {
         // Increase counter by one
         bearTurnsOnScreen++;
 

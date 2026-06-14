@@ -7,6 +7,7 @@ class Deer : public Animal {
     public:
         Deer(int section);
         std::string getName() const override;
+        bool canHarmPlayer() const override;
 };
 
 #endif

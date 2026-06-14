@@ -7,6 +7,7 @@ class Bear : public Animal {
     public:
         Bear(int section);
         std::string getName() const override;
+        bool canHarmPlayer() const override;
 };
 
 #endif

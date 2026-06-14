@@ -17,6 +17,7 @@ class Animal {
 
         // Animal Differentiation Method
         virtual std::string getName() const = 0;
+        virtual bool canHarmPlayer() const = 0;
 
         // Getters
         int getSection() const;
