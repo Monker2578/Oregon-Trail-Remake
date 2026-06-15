@@ -6,14 +6,21 @@
 
 class Party {
     private:
-        std::vector<Character> members;
+        std::vector<Character> aliveMembers;
+        std::vector<Character> deceasedMembers;
     public:
         // Constructor
         Party();
 
-        // Getters
-        int getPartySize() const;
-        Character& getMember(size_t index);
+        // Parties Size System
+        int aliveSize() const;
+        int deceasedSize() const;
+
+        // Member Access System
+        const Character& getMember(size_t index) const;
+        const Character& getDeceasedMember(size_t index) const;
+
+        // Health and Condition System
         int getAverageHealth() const;
         Condition getAverageCondition(int averageHealth) const;
 
