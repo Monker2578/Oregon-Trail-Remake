@@ -152,37 +152,3 @@ bool Wagon::gainItem(itemType type, double amt) {
            throw std::invalid_argument("Invalid item type");
    }
 }
-
-
-// Returns wagon size
-int Wagon::wagonSize() const {
-   return members.size();
-}
-
-
-// Returns the chosen member from the wagon
-const Character& Wagon::getMember(size_t index) const {
-   if (index >= members.size()) {
-       throw std::out_of_range("Invalid Index"); // Throw error if the index is out of bound
-   }
-
-
-   return members.at(index);
-}
-
-
-// Adds member to wagon
-void Wagon::addMember(const std::string& name) {
-   members.push_back(Character(name));
-}
-
-
-// Deletes member from wagon
-void Wagon::removeMember(size_t index) {
-   if (index >= members.size()) {
-       throw std::out_of_range("Invalid Index"); // Throw error if the index is out of bound
-   }
-
-
-   members.erase(members.begin() + index);
-}

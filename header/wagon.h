@@ -3,8 +3,6 @@
 
 
 #include <vector>
-#include "header/character.h"
-
 
 struct Inventory { // Wagon inventory data
    int foodAmt = 0;
@@ -31,7 +29,6 @@ enum class itemType {food, money, ammunition, clothing, axle, wheel, tongue, oxe
 class Wagon {
    private:
        Inventory wagon;
-       std::vector<Character> members;
    public:
        // Constructor
        Wagon();
@@ -54,16 +51,6 @@ class Wagon {
 
        // Inventory Gain System
        bool gainItem(itemType type, double amt);
-
-
-       // Wagon Size
-       int wagonSize() const;
-
-
-       // Wagon Member Modification System
-       const Character& getMember(size_t index) const;
-       void addMember(const std::string& name);
-       void removeMember(size_t index);
 };
 
 
