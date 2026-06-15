@@ -3,21 +3,18 @@
  > Author: [Freddy Dong](https://github.com/Monker2578)
 
  ## Expectations
-* We expect to use C++ for backend development
-* We are expecting to produce a text styled rpg that has multiple checkpoints along the way
-* If we have extra time, we would implement game libraries to enhance the game to become a 2D game. For example, player icons, images, and etc.
-* We will utilize Scrum framework to maximize productivity and output.
-* Every member of the group will contribute equally to the project.
-* Every member will contribute in areas they are proficient in
-* We will implement unit testing, Github project board, and utilize Github issue systems.
-* The final project will be fully reviewed and each individual pull request will be examined carefully
+* Utilization of C++ for backend development
+* Expecting to produce a text styled rpg with multiple checkpoints along the way
+* If given extra time, implement game libraries to transform the game into a 2D game. (Ex: player icons, images, and etc.)
+* Utilize Scrum framework to maximize productivity and output.
+* Implementation of unit testing, Github project board, and Github issue systems.
 
 ## Input and Output
-This game is a text-based RPG played entirely through the terminal. The user interacts with the program by reading men prompts and entering a number. Most user inputs will be simple menu choices such as "1" continue on the trail, "2" check supplies, "3" view the map, "4" change the pace, "5" change rations, "6" rest, "7" attempt to trade, or "8" hunt. 
+This game is a text-based RPG played entirely through the terminal. The user interacts with the program by reading prompts and entering decision inputs (mostly in the format of numbers and characters). For example, menu options are displayed as enter "1" continue on the trail, "2" check supplies, "3" view the map, "4" change the pace, "5" change rations, "6" rest, "7" attempt to trade, or "8" hunt. 
 
-The game will output text directly to the terminal. These outputs may include status updates, travel summaries, remaining supplies, current pace and ration settings and will output event descriptions, encounters, or tragedies that occur after the player's decisions.
+The game will output text directly to the terminal. These outputs may include status updates, travel summaries, remaining supplies, current pace, ration settings, event descriptions, encounters, or tragedies that occur after the player's decisions.
 
-For example, after choosing to continue on the trail, the output on th eterminal will display how many miles the party traveled, how much food was used and how much food remains. It may also trigger an event or encounter in which the user is prompted to make additional decisions that may determine the fate of their party.
+For example, after choosing to continue on the trail, the terminal will display how many miles the wagon traveled, how much food was used, and how much food remains. It may also trigger an event or encounter in which the user is prompted to make additional decisions that may determine the fate of their party.
 
 ## Project Description
 Oregon Trail is a text style RPG in which the user plays as a wagon leader guiding a party from Independence, Missouri to the fertile Willamette Valley in Oregon in 1848-1849. This game will prompt the user to make choices as wagon leader on the journey. The user will make decisions on supplies, departure time, wagon setup, food rationing, travel pace, but will also face random encounters, tragedy, sickness and death. There are endless possibilites and opportunities for features to strain our software programming knowledge. As well as collaboration experience in a group.
@@ -103,7 +100,7 @@ Updated UML diagram.
 <img width="2102" height="1212" alt="umltesting" src="https://github.com/user-attachments/assets/7274fe7e-1d39-4d2f-bc6f-829fbb32145e" />
 
 
- > ## Phase III
+ > ## Structure Design
 
 Character: For characters, I applied the SRP and the Open/Closed SOLID principles. The class is constructed so that it can be scaled anytime. Additionally, the class only handles character related issues such as the health system. This change made sure my code is easily readable and changed in reaction to future updates.
 
