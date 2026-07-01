@@ -21,6 +21,9 @@ void Pacing::changeSpeed(int option) {
         case 3:
             wagon_speed = Pace::slow;
             break;
+        case 4:
+            wagon_speed = Pace::rest;
+            break;
     }
 }
 
@@ -35,6 +38,8 @@ int Pacing::getSpeed() const{
             return 20;
         case Pace::slow :
             return 10;
+        case Pace::rest :
+            return 0;
     }
 }
 

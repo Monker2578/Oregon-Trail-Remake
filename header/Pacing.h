@@ -6,6 +6,7 @@ enum class Pace {
     grueling,
     steady,
     slow,
+    rest,
 
 };
 
