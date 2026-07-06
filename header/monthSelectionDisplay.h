@@ -8,6 +8,6 @@ class MonthSelectionDisplay {
         void adviceOption (std::ostream& );
         void monthSelectionPompt (std::ostream& );
 
-    private:
+    
 };
 #endif
