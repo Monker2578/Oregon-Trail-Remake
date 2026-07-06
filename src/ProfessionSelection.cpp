@@ -2,7 +2,7 @@
 #include <iostream>
 
 // Display the profession selection menu
-void ProfessionSelection::selectProfessionDisplay() {
+void ProfessionSelection::selectProfession() {
     std::cout << "Many kinds of people made the trip to Oregon.\n\n";
     std::cout << "You may:\n";
     std::cout << "1. Be a banker from Boston\n";

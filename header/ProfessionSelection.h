@@ -8,10 +8,10 @@ class ProfessionSelection {
         Wagon& w; // Reference to the Wagon object to apply profession buffs
 
         // Constructor to initialize the ProfessionSelection with a reference to a Wagon object
-        ProfessionSelection(Wagon& wagon) : w(wagon) {}
+        ProfessionSelection(Wagon& w) : w(w) {}
 
         // Display the profession selection menu
-        void selectProfessionDisplay();
+        void selectProfession();
 
         // Handle the logic for the selected profession
         void selectProfessionLogic(int choice);
