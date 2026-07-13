@@ -21,6 +21,14 @@ bool Character::checkAlive() const {
    return isAlive;
 }
 
+Condition Character::getCondition() const {
+   if (health >= 80) { return Condition::excellent;
+   } else if (health >= 60) { return Condition::good;
+   } else if (health >= 40) { return Condition::fair;
+   } else if (health >= 20) { return Condition::poor;
+   } else { return Condition::critical; }
+}
+
 // Setters
 void Character::setName(const std::string& name) {
    this -> name = name;
