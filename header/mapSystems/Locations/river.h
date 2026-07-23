@@ -11,12 +11,9 @@ class River : public Locations {
         double depth;
     public:
         // Constructor
-        River(std::string name, bool isDetour, Locations* next, int distance);
+        River::River(CommonAttributes& c, int w, int d) : Locations(c), width(w), depth(d) {}
 
         // Getters
-        const std::string& getName() const override;
-        int getDistance() const override;
-        bool getIsDetour() const override;
         LocationType getType() const override;
 };
 

@@ -9,12 +9,9 @@ class Fort : public Locations {
         LocationType type = LocationType::fort;
     public:
         // Constructor
-        Fort(std::string name, bool isDetour, Locations* next, int distance);
+        Fort(CommonAttributes& c) : Locations(c) {}
 
         // Getters
-        const std::string& getName() const override;
-        int getDistance() const override;
-        bool getIsDetour() const override;
         LocationType getType() const override;
 };
 

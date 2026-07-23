@@ -5,20 +5,24 @@
 
 enum class LocationType {landmark, fort, river};
 
+struct CommonAttributes {
+    std::string name;
+    bool isDetour;
+    Locations* nextLocation = nullptr;
+    int distanceToNextLocation;
+};
+
 class Locations {
     protected:
-        std::string name;
-        bool isDetour;
-        Locations* nextLocation = nullptr;
-        int distanceToNextLocation;
+        CommonAttributes data;
     public:
         // Constructor
-        Locations(std::string name, bool isDetour, Locations* next, int distance);
+        Locations(CommonAttributes& c) : data(c) {}
 
         // Getters
-        const virtual std::string& getName() const = 0;
-        virtual int getDistance() const = 0;
-        virtual bool getIsDetour() const = 0;
+        const std::string& getName() const;
+        int getDistance() const;
+        bool getIsDetour() const;
         virtual LocationType getType() const = 0;
 };
 
