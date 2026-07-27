@@ -10,6 +10,15 @@ class Map {
     public:
         Map();
         ~Map();
+
+        int initilizeLocation();
+
+        int getTotalDistanceTraveled() const;
+        void incrementTotalDistance(int distance);
+
+        void displayMap() const;
+
+        void currentLocation() const;
         
 };
 

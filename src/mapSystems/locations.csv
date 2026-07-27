@@ -1,0 +1,15 @@
+type,name,isdeture,distance,width,Depth
+1,Kansas River Crossing,false,82,632,5.3
+1,Big Blue River Crossing,false,118,238,3.4
+2,Fort Kearney,false,250,,
+0,Chimney Rock,false,86,,
+2,Fort Laramie,false,190,,
+0,Independence Rock,false,102,,
+0,South Pass,true,57,,
+1,Green River Crossing,false,143,400,20.1
+0,Soda Springs,false,57,,
+2,Fort Hall,false,182,,
+1,Snake River Crossing,false,113,987,6.2
+2,Fort Boise,false,160,,
+0,Blue Mountains,true,125,,
+0,The Dalles,true,100,,
