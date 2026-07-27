@@ -12,3 +12,10 @@ bool Locations::getIsDetour() const {
     return data.isDetour;
 }
 
+void Locations::setNextLocation(Locations* newLocation) {
+    nextLocation = newLocation;
+}
+
+Locations* Locations::getNextLocation() const {
+    return nextLocation;
+}
