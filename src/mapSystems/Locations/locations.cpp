@@ -5,7 +5,7 @@ const std::string& Locations::getName() const {
 }
 
 int Locations::getDistance() const {
-    return data.distanceToNextLocation;
+    return data.distanceFromOrigin;
 }
 
 bool Locations::getIsDetour() const {

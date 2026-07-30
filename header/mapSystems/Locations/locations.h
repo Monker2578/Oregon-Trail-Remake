@@ -4,11 +4,13 @@
 #include <iostream>
 
 enum class LocationType {landmark, fort, river};
+enum class TerrainType {grassland = 0, mountainous = 1};
 
 struct CommonAttributes {
     std::string name;
     bool isDetour;
-    int distanceToNextLocation;
+    int distanceFromOrigin;
+    TerrainType terrain;
 };
 
 class Locations {

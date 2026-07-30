@@ -7,6 +7,7 @@ class Map {
     private:
         Locations* head;
         int totalDistanceTraveled;
+        Locations* curr = nullptr;
     public:
         Map();
         ~Map();
@@ -18,8 +19,9 @@ class Map {
 
         void displayMap() const;
 
-        void currentLocation() const;
-        
+        Locations* getCurrLocation() const;
+        Locations* getNextLocation() const;
+        void updateCurrLocation(int distance);
 };
 
 #endif
