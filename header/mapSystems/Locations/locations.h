@@ -30,6 +30,9 @@ class Locations {
 
         // Setters
         void setNextLocation(Locations*);
+
+        // Display Location Function
+        virtual void display() const = 0;
 };
 
 #endif

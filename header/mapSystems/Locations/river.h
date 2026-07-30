@@ -15,6 +15,12 @@ class River : public Locations {
 
         // Getters
         LocationType getType() const override;
+
+        // Display Location Screen
+        void display() const override;
+
+        // River Crossing Survival Calculation
+        bool calculateSurvival(int option);
 };
 
 #endif

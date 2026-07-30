@@ -13,6 +13,9 @@ class Landmark : public Locations {
 
         // Getters
         LocationType getType() const override;
+
+        // Display Location Screen
+        void display() const override;
 };
 
 #endif
