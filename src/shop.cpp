@@ -29,7 +29,7 @@ void Shop::runShop(const std::string& name) {
 
 
        // Different options
-       if (!(std::cin >> input) || input < 0 || input > shop.size()) { // Checks for valid input
+       if (!(std::cin >> input) || input < 0 || input > static_cast<int>(shop.size())) { // Checks for valid input
            std::cin.clear();
            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
            std::cout << "Please input a valid option!" << "\n" << "\n";
@@ -121,20 +121,15 @@ double Shop::displayItemPrice(itemType type) const {
    return itemFinder(type).price;
 }
 
-
 // Returns the specific item purchase limit
 int Shop::displayItemLimit(itemType type) const {
    return itemFinder(type).purchaseLimit;
 }
 
-
-
-
 // Purchase limit message
 void Shop::limitMessage(int limit, const std::string& name) const {
    std::cout << "You can only purchase " << limit << " of " << name << "\n" << "\n";
 }
-
 
 // Display total shopping cart price
 double Shop::totalPrice() const {
