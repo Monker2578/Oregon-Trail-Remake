@@ -26,6 +26,7 @@ Condition Character::getCondition() const {
    } else if (health >= 60) { return Condition::good;
    } else if (health >= 40) { return Condition::fair;
    } else if (health >= 20) { return Condition::poor;
+   } else if (health == 0) { return Condition::dead;
    } else { return Condition::critical; }
 }
 

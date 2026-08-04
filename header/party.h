@@ -17,16 +17,20 @@ class Party {
         int deceasedSize() const;
 
         // Member Access System
-        const Character& getMember(size_t index) const;
+        const Character& getAliveMember(size_t index) const;
         const Character& getDeceasedMember(size_t index) const;
 
         // Health and Condition System
         int getAverageHealth() const;
         Condition getAverageCondition(int averageHealth) const;
 
+        // Health Management System
+        void healMember(size_t index, int amt);
+        void damageMember(size_t index, int amt);
+
         // Party Management System
         void addMember(const std::string& name);
-        void removeMember(size_t index);
+        void killMember(size_t index);
 };
 
 #endif
