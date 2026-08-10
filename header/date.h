@@ -15,12 +15,12 @@ class Date {
         void monthCheck();
         void yearCheck();
         bool moreDaysMonth() const;
+        std::string_view numberToMonth(int month) const;
     public:
         Date();
         void setDate(int, int, int);
         void increment();
         int getMonth() const;
-        std::string_view numberToMonth(int month) const;
         std::string display() const;
 };
 
