@@ -1,7 +1,10 @@
 #ifndef DATE_H
 #define DATE_H
 
-// enum class MonthLabel {Janurary, Feburary, March, April, May, June, July, August, September, October, November, December};
+#include <string>
+
+// enum class MonthLabel {Janurary = 1, Feburary = 2, March = 3, April, May,
+//                         June, July, August, September, October, November, December};
 
 class Date {
     private:
@@ -16,6 +19,9 @@ class Date {
         Date();
         void setDate(int, int, int);
         void increment();
+        int getMonth() const;
+        std::string_view numberToMonth(int month) const;
+        std::string display() const;
 };
 
 #endif
