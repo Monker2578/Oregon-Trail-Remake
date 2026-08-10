@@ -1,24 +1,16 @@
 #include "monthSelection.h"
 
-MonthSelection::MonthSelection(std::ostream& out, std::istream& in) {
-
-    
+MonthSelection::MonthSelection(std::ostream& out, std::istream& in, Date& d) {
     // calls display class to prompt user to choose month
     MonthSelectionDisplay display;
     display.monthSelectionPompt(out);
 
     // handels input selection
-    inputSelection(display, in, out);
-    
-}
-
-// returns start game date in date struct
-const Date& MonthSelection::getStartDate() const {
-    return gameTime;
+    inputSelection(display, in, out, d);
 }
 
 // Private helper functions 
-void MonthSelection::inputSelection (MonthSelectionDisplay& display, std::istream& in, std::ostream& out) {
+void MonthSelection::inputSelection(MonthSelectionDisplay& display, std::istream& in, std::ostream& out, Date& d) {
 
     // validates input: valid input range (1-6)
     int input;
@@ -31,25 +23,27 @@ void MonthSelection::inputSelection (MonthSelectionDisplay& display, std::istrea
         //     gameTime.setDate(1, 3, 1848);  // user option March
         //     break;
         case 2:
-            gameTime.setDate(1, 4, 1848);  // user option April
+            d.setDate(1, 4, 1848);  // user option April
             break;
         case 3:
-            gameTime.setDate(1, 5, 1848);  // user option May
+            d.setDate(1, 5, 1848);  // user option May
             break;
         case 4:
-            gameTime.setDate(1, 6, 1848);;  // user option June
+            d.setDate(1, 6, 1848);;  // user option June
             break;
         case 5:
-            gameTime.setDate(1, 7, 1848);;  // user option July
+            d.setDate(1, 7, 1848);;  // user option July
             break;
         case 6:
-            adviceSelection(out, in, display);  // user option "ask for advice"
+            adviceSelection(out, in, display, d);  // user option "ask for advice"
             break;
-
+        default:
+            std::cerr << "incorrect parameters";
+            exit(EXIT_FAILURE);
     }
 }
 
-void MonthSelection::adviceSelection(std::ostream& out, std::istream& in, MonthSelectionDisplay& display) {
+void MonthSelection::adviceSelection(std::ostream& out, std::istream& in, MonthSelectionDisplay& display, Date& d) {
 
     // calls display function to display advice slide
     display.adviceOption(out);
@@ -62,7 +56,7 @@ void MonthSelection::adviceSelection(std::ostream& out, std::istream& in, MonthS
 
     // calls month selection prompt and month selection input logic
     display.monthSelectionPompt(out);
-    inputSelection(display,in,out);
+    inputSelection(display,in,out, d);
 }
 
 
