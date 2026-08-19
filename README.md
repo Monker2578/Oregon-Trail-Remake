@@ -116,9 +116,7 @@ TerminalIO (input/output) This was also SRP, the first thing was to split the te
 
 StatusHeader: SRP. moved statusHeader and the related party status out of the menu and now its only responsible for showing the player's current game information, from miles, pace, rations, food, money an party health. It displays what is without worrying about the implications. 
 
-PartySetup: SRP: Is now resonspible for creating the player's party, validating names, using preset names, an returning vector<Character>. The party creation is seperate as well as the rules within it including max name length, preset party names, and number of party members without affecting the main game loop. 
-
-DifficultySetup: SRP & DIP. I moved difficulty/proffesion selection into its own file. The old way created its own local wagon to apply profession bonuses onto it. But in this way the setup is seperate and if we need to modify or test the professions it can be done on its own. 
+PartySetup: SRP: Is now resonspible for creating the player's party, validating names, using preset names, an returning vector<Character>. The party creation is seperate as well as the rules within it including max name length, preset party names, and number of party members without affecting the main game loop.
 
 Rest Screen: SRP. The rest screen is on its own like the other menu options. This one is responsible only for asking whether the player wants the wagon party to rest, choosing how many days, and healing the party. Resting is its own feature isntead of being buried inside the menu. Resting consumes food and perhaps triggers encounters, it'll be easier to manage these possibilities without touching the main menu. 
 
