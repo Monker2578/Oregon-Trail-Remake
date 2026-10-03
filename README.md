@@ -1,6 +1,6 @@
 # Oregon-Trail-Remake
  
- > Author: [Freddy Dong](https://github.com/Monker2578), Co-author: [Varun] 
+ > Author: [Freddy Dong](https://github.com/Monker2578), Co-author: [Varun](https://github.com/varunm532)
 
  ## Expectations
 * Utilization of C++ for backend development
