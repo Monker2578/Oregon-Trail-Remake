@@ -1,10 +1,11 @@
 #include "header/party.h"
 #include <utility>
+#include <stdexcept>
  
 // Constructor
 Party::Party() {}
  
- 
+
 // Gets an alive member at the specified index
 const Character& Party::getAliveMember(size_t index) const {
     if (index >= aliveMembers.size()) {
@@ -20,7 +21,33 @@ const Character& Party::getDeceasedMember(size_t index) const {
     }
     return deceasedMembers.at(index);
 }
+
+// Get the number of alive members
+int Party::aliveSize() const {
+    return aliveMembers.size();
+}
  
+// Get the number of deceased members
+int Party::deceasedSize() const {
+    return deceasedMembers.size();
+}
+
+// Heals a member at the specified index
+void Party::healMember(size_t index, int amt) {
+    if (index >= aliveMembers.size()) {
+        throw std::out_of_range("Index out of range"); // Throw an exception if the index is out of range
+    }
+    aliveMembers.at(index).heal(amt);
+}
+
+// Damages a member at the specified index
+void Party::damageMember(size_t index, int amt) {
+    if (index >= aliveMembers.size()) {
+        throw std::out_of_range("Index out of range"); // Throw an exception if the index is out of range
+    }
+    aliveMembers.at(index).takeDamage(amt);
+}
+
 // Adds a member to the party
 void Party::addMember(const std::string& name) {
     aliveMembers.emplace_back(name); // Used emplace_back to improve efficiency by constructing the Character in place
@@ -34,16 +61,6 @@ void Party::killMember(size_t index) {
  
     deceasedMembers.push_back(std::move(aliveMembers.at(index)));
     aliveMembers.erase(aliveMembers.begin() + index);
-}
- 
-// Get the number of alive members
-int Party::aliveSize() const {
-    return aliveMembers.size();
-}
- 
-// Get the number of deceased members
-int Party::deceasedSize() const {
-    return deceasedMembers.size();
 }
  
 // Get the average health of alive members

@@ -115,9 +115,9 @@ void Game::printAnimalPosition() const {
 // Centers the text in the middle of a string of length 17
 std::string Game::stringCentering(const std::string& text) const {
     // Calculates the padding for the text
-    int estimateSpace = (17 - text.length()) / 2;
+    int estimateSpace = (17 - static_cast<int>(text.length())) / 2;
 
-    return std::string(estimateSpace, ' ') + text + std::string(17 - estimateSpace - text.length(), ' ');
+    return std::string(estimateSpace, ' ') + text + std::string(17 - estimateSpace - static_cast<int>(text.length()), ' ');
 }
 
 // Prints the player position

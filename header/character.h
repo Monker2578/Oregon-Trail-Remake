@@ -4,7 +4,7 @@
 
 #include <string>
 
-enum class Condition {excellent, good, fair, poor, critical};
+enum class Condition {excellent, good, fair, poor, critical, dead};
 
 class Character {
     private:

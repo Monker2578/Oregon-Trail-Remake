@@ -26,6 +26,7 @@ Condition Character::getCondition() const {
    } else if (health >= 60) { return Condition::good;
    } else if (health >= 40) { return Condition::fair;
    } else if (health >= 20) { return Condition::poor;
+   } else if (health == 0) { return Condition::dead;
    } else { return Condition::critical; }
 }
 
@@ -35,8 +36,7 @@ void Character::setName(const std::string& name) {
 }
 
 void Character::takeDamage(int damageAmt) {
-   if (!isAlive) { return; } // Stop if the character is already dead
-
+   if (!isAlive || damageAmt < 0) { return; } // Stop if the character is already dead or the damage amount is negative
 
    health -= damageAmt; // Take Damage & update character health
    if (health <= 0) { // Character dies if heal depletes below 0
@@ -46,8 +46,7 @@ void Character::takeDamage(int damageAmt) {
 }
 
 void Character::heal(int healAmt) {
-   if (!isAlive || health == 100) { return; } // Stop if the character is already dead or the health is at max
-
+   if (!isAlive || health == 100 || healAmt < 0) { return; } // Stop if the character is already dead, the health is at max, or the heal amount is negative
 
    health += healAmt; // Heal
    if (health > 100) { // Caps max health to 100
